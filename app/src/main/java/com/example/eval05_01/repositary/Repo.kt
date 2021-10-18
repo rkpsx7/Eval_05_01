@@ -1,5 +1,6 @@
 package com.example.eval05_01.repositary
 
+import androidx.lifecycle.LiveData
 import com.example.eval05_01.local.DAO
 import com.example.eval05_01.local.PersonEntity
 import com.example.eval05_01.network.Network
@@ -30,7 +31,6 @@ class Repo(val dao: DAO) {
                 if (dod == null)
                     dod = ""
 
-
                 val person = PersonEntity(img, country, dob, dod)
                 dao.insertPerson(person)
             }
@@ -38,8 +38,7 @@ class Repo(val dao: DAO) {
 
     }
 
-    fun getPersonFromDB(): List<PersonEntity> {
-        getPeronFromServer()
+    fun getPersonFromDB(): LiveData<List<PersonEntity>> {
         return dao.getPersonFromDB()
     }
 }

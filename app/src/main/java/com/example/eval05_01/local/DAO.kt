@@ -1,5 +1,6 @@
 package com.example.eval05_01.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
@@ -12,5 +13,5 @@ interface DAO {
     fun insertPerson(person: PersonEntity)
 
     @Query("select * from PersonTable")
-    fun getPersonFromDB(): List<PersonEntity>
+    fun getPersonFromDB(): LiveData<List<PersonEntity>>
 }

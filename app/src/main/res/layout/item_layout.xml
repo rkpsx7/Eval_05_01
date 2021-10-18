@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <data>
-        <variable
-            name="person"
-            type="com.example.eval05_01.local.PersonEntity" />
-    </data>
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,15 +8,14 @@
         <ImageView
             android:id="@+id/iv_img"
             android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@{person.img_url}" />
+            android:layout_height="150dp" />
 
         <TextView
             android:id="@+id/tv_country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{person.country}"
+            android:text=""
             android:textSize="28sp" />
 
         <TextView
@@ -31,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{person.dob}"
+            android:text=""
             android:textSize="28sp" />
 
         <TextView
@@ -39,8 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{person.dod}"
+            android:text=""
             android:textSize="28sp" />
 
     </LinearLayout>
-</layout>
