@@ -36,6 +36,5 @@ class MainActivity : AppCompatActivity() {
             Log.d("rkpsx7", persons[2].toString())
         }
 
-
     }
 }
