@@ -12,5 +12,5 @@ interface DAO {
     fun insertPerson(person: PersonEntity)
 
     @Query("select * from PersonTable")
-    fun getPersonFromDB(): ArrayList<PersonEntity>
+    fun getPersonFromDB(): List<PersonEntity>
 }

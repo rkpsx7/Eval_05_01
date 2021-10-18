@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET
-    fun getActors(): ResposeDTO
+    @GET("people?page=1")
+    suspend fun getActors(): ResposeDTO
 
 }
