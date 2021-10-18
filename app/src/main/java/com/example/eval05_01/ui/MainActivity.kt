@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn.setOnClickListener {
-            Log.d("rkpsx7", persons[0].toString())
+            Log.d("rkpsx7", persons[2].toString())
         }
 
 

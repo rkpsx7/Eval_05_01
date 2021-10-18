@@ -14,27 +14,25 @@ class Repo(val dao: DAO) {
     fun getPeronFromServer() {
         CoroutineScope(IO).launch {
             val response = apiService.getActors()
-            for (i in 0..response.size) {
-                if (response[i] != null) {
-                    val item = response[i]
-                    var img = item.image?.medium
-                    var country = item.country?.name
-                    var dob = item.birthday
-                    var dod = item.deathday
+            for (i in 0 until response.size) {
+                val item = response[i]
+                var img = item.image?.medium
+                var country = item.country?.name
+                var dob = item.birthday
+                var dod = item.deathday
 
-                    if (img == null || country == null || dob == null || dod == null) {
-                        country = ""
-                        dob = ""
-                        dod = ""
-                        img = ""
-                    }
-                    val person = PersonEntity(img, country, dob, dod)
-                    dao.insertPerson(person)
-                }
+                if (img == null)
+                    img = ""
+                if (country == null)
+                    country = ""
+                if (dob == null)
+                    dob = ""
+                if (dod == null)
+                    dod = ""
 
 
-
-
+                val person = PersonEntity(img, country, dob, dod)
+                dao.insertPerson(person)
             }
         }
 
